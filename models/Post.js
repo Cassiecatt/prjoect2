@@ -29,15 +29,22 @@ Post.init(
         isDecimal: true,
       },
     },
+    company_id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      reference: {
+        model: "company",
+        key: "id",
+      },
+    },
   },
   {
     sequelize,
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: "category",
+    modelName: "post",
   }
 );
 
 module.exports = Post;
-
