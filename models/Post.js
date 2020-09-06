@@ -1,42 +1,43 @@
 const { Model, DataTypes } = require("sequelize"); //sequelize model
 const sequelize = require("../config/connection"); //sequelize
 
-class Post extends Post {}
+class Post extends Model {}
 
-Post.init({
-  id: {
-    types: DataTypes.INTEGER,
-    allowNull: false,
-    autoIncrement: true,
-    primaryKey: true,
-  },
-  title: {
-    types: DataTypes.STRING,
-    allowNull: false,
-    validate: {
-      len: [30],
+Post.init(
+  {
+    id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      primaryKey: true,
+      autoIncrement: true,
     },
-  },
-  description: {
-    types: DataTypes.STRING,
-    allowNull: false,
-    validate: {
-      len: [30],
+    post_name: {
+      type: DataTypes.STRING,
+      allowNull: false,
     },
-    salary: {
-      types: DataTypes.DECIMAL,
+    post_description: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        len: [30],
+      },
+    },
+    post_salary: {
+      type: DataTypes.DECIMAL,
       allowNull: false,
       validate: {
         isDecimal: true,
       },
-      // Refernece company id when created
     },
+  },
+  {
     sequelize,
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: "post",
-  },
-});
+    modelName: "category",
+  }
+);
 
 module.exports = Post;
+
