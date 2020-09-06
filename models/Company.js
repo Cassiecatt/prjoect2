@@ -11,18 +11,25 @@ Company.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    title: {
+    company_name: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    post_id: {
+    pasword: {
       type: DataTypes.INTEGER,
       allowNull: false,
-      reference: {
-        model: "post",
-        key: "id",
+      validate: {
+        len: [4],
       },
     },
+    // post_id: {
+    //   type: DataTypes.INTEGER,
+    //   allowNull: false,
+    //   reference: {
+    //     model: "post",
+    //     key: "id",
+    //   },
+    // },
   },
   {
     sequelize,
