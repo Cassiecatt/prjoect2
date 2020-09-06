@@ -1,6 +1,8 @@
 const { Model, Datatypes, DataTypes } = require("sequelize"); //sequelize model
 const sequelize = require("../config/connection"); //sequelize
 
+// Add hook and hashing
+
 class Company extends Model {}
 
 Company.init(
