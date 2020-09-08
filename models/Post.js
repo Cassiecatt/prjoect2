@@ -11,29 +11,29 @@ Post.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    post_name: {
+    title: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    post_description: {
+    description: {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
         len: [30],
       },
     },
-    post_salary: {
+    salary: {
       type: DataTypes.DECIMAL,
       allowNull: false,
       validate: {
         isDecimal: true,
       },
     },
-    company_id: {
+    user_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
       reference: {
-        model: "company",
+        model: "user",
         key: "id",
       },
     },

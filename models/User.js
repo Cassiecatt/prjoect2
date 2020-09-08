@@ -1,11 +1,11 @@
-const { Model, Datatypes, DataTypes } = require("sequelize"); //sequelize model
+const { Model, DataTypes } = require("sequelize"); //sequelize model
 const sequelize = require("../config/connection"); //sequelize
 
 // Add hook and hashing
 
-class Company extends Model {}
+class User extends Model {}
 
-Company.init(
+User.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -13,11 +13,11 @@ Company.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    company_name: {
+    username: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    pasword: {
+    password: {
       type: DataTypes.INTEGER,
       allowNull: false,
       validate: {
@@ -38,8 +38,8 @@ Company.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: "company",
+    modelName: "user",
   }
 );
 
-module.exports = Company;
+module.exports = User;
