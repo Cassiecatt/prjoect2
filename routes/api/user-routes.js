@@ -1,7 +1,7 @@
 const router = require("express").Router();
 const { User } = require("../../models");
 
-// GET /api/company
+// GET /api/users
 router.get("/", (req, res) => {
   User.findAll()
     .then((dbUserData) => res.json(dbUserData))
@@ -11,7 +11,7 @@ router.get("/", (req, res) => {
     });
 });
 
-// GET /api/company/1
+// GET /api/users/1
 router.get("/:id", (req, res) => {
   User.findOne({
     where: {
@@ -31,13 +31,23 @@ router.get("/:id", (req, res) => {
     });
 });
 
-// POST /api/company
-router.post("/", (req, res) => {});
+// POST /api/users
+router.post("/", (req, res) => {
+  User.create({
+    username: req.body.username,
+    password: req.body.password
+  })
+  .then(dbUserData => res.json(dbUserData))
+  .catch(err => {
+    console.log(err);
+    res.status(500).json(err);
+  });
+});
 
-// PUT /api/copmany/1
+// PUT /api/users/1
 router.put("/:id", (req, res) => {});
 
-// DELETE /api/company/1
+// DELETE /api/users/1
 router.delete("/:id", (req, res) => {});
 
 module.exports = router;
