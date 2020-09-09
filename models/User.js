@@ -1,7 +1,6 @@
+const bcrypt = require('bcrypt');
 const { Model, DataTypes } = require("sequelize"); //sequelize model
 const sequelize = require("../config/connection"); //sequelize
-
-// Add hook and hashing
 
 class User extends Model {}
 
@@ -24,15 +23,15 @@ User.init(
         len: [4],
       },
     },
-    // post_id: {
-    //   type: DataTypes.INTEGER,
-    //   allowNull: false,
-    //   reference: {
-    //     model: "post",
-    //     key: "id",
-    //   },
-    // },
   },
+  // {
+  //   hooks: {
+  //     beforeCreate: async function(newUserData) {
+  //       newUserData.password = await bcrypt.hash(newUserData.password, 10);
+  //       return newUserData;
+  //     }
+  //   }
+  // },
   {
     sequelize,
     timestamps: false,
@@ -42,4 +41,8 @@ User.init(
   }
 );
 
+User.beforeCreate(async function(newUserData) {
+  newUserData.password = await bcrypt.hash(newUserData.password, 10);
+        return newUserData;
+})
 module.exports = User;
