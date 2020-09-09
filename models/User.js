@@ -44,5 +44,12 @@ User.init(
 User.beforeCreate(async function(newUserData) {
   newUserData.password = await bcrypt.hash(newUserData.password, 10);
         return newUserData;
+});
+
+User.beforeUpdate(async function(updatedUserData) {
+  updatedUserData.password = await bcrypt.hash(updatedUserData.password, 10);
+  return updatedUserData;
 })
+
+
 module.exports = User;
