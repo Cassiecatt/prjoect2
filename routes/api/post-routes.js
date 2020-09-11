@@ -29,7 +29,7 @@ router.get("/:id", (req, res) => {
       {
         model: User,
         attributes: ["id"],
-      },
+      }, // add category model/id
     ],
   })
     .then((dbPostdata) => {
