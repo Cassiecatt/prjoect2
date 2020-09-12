@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { Post, User } = require("../../models");
+const { Post, User, Category } = require("../../models");
 
 // GET /api/posts
 router.get("/", (req, res) => {
@@ -10,6 +10,9 @@ router.get("/", (req, res) => {
         model: User,
         attributes: ["id", "username"],
       },
+      { 
+        model: Category, 
+        attributes: ["id"] },
     ],
   })
     .then((dbPostdata) => res.json(dbPostdata))
@@ -52,6 +55,7 @@ router.post("/", (req, res) => {
     description: req.body.description,
     salary: req.body.salary,
     user_id: req.body.user_id,
+    category_id: req.body.category_id
   })
     .then((dbPostdata) => res.json(dbPostdata))
     .catch((err) => {

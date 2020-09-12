@@ -14,16 +14,16 @@ router.get("/", (req, res) => {
 });
 
 //GET /api/categories/category_name
-router.get("/:category_name", (req, res) => {
+router.get("/:id", (req, res) => {
   Category.findOne({
     where: {
-      category_name: req.params.category_name,
+      id: req.params.id,
     },
     include: [Post],
   })
     .then((dbCategoryData) => {
       if (!dbCategoryData) {
-        res.status(404).json({ message: "No category found with this name" });
+        res.status(404).json({ message: "No category found with this id" });
         return;
       }
       res.json(dbCategoryData);
@@ -44,17 +44,17 @@ router.post("/", (req, res) => {
     });
 });
 
-//PUT /api/categories/category_name
-router.put("/:category_name", (req, res) => {
+//PUT /api/categories/:id
+router.put("/:id", (req, res) => {
   Category.update(req.body, {
     where: {
-      category_name: req.params.category_name,
+      id: req.params.id,
     },
     //   include: [Post],
   })
     .then((dbCategoryData) => {
       if (!dbCategoryData) {
-        res.status(404).json({ message: "No category found with this name" });
+        res.status(404).json({ message: "No category found with this id" });
         return;
       }
       res.json(dbCategoryData);
@@ -66,15 +66,15 @@ router.put("/:category_name", (req, res) => {
 });
 
 //DELETE /api/categories/category_name
-router.delete("/:category_name", (req, res) => {
+router.delete("/:id", (req, res) => {
   Category.destroy({
     where: {
-      category_name: req.params.category_name,
+      id: req.params.id,
     },
   })
     .then((dbCategoryData) => {
       if (!dbCategoryData) {
-        res.status(404).json({ message: "No category found with this name" });
+        res.status(404).json({ message: "No category found with this id" });
         return;
       }
       res.json(dbCategoryData);
