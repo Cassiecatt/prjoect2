@@ -12,7 +12,7 @@ router.get("/", (req, res) => {
       },
       { 
         model: Category, 
-        attributes: ["id"] },
+        attributes: ["id", "category_name"] },
     ],
   })
     .then((dbPostdata) => res.json(dbPostdata))
@@ -32,7 +32,11 @@ router.get("/:id", (req, res) => {
       {
         model: User,
         attributes: ["id"],
-      }, // add category model/id
+      }, 
+      {
+        model: Category,
+        attributes: ["id", "category_name"]
+      }
     ],
   })
     .then((dbPostdata) => {
