@@ -9,8 +9,13 @@ Post.belongsTo(User, {
   onDelete: "CASCADE",
 });
 
-Category.belongsTo(Post, {
-  foreignKey: "post_id",
+Post.belongsTo(Category, {
+  foreignKey: "category_id",
+  onDelete: "CASCADE"
+});
+
+Category.hasMany(Post, {
+  foreignKey: "category_id",
   onDelete: "CASCADE",
 });
 

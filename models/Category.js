@@ -15,6 +15,13 @@ Category.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
+    // post_id: {
+    //   type: DataTypes.INTEGER,
+    //   reference: {
+    //     model: "post",
+    //     key: "id",
+    //   },
+    // },
   },
   {
     sequelize,

@@ -37,14 +37,15 @@ Post.init(
         key: "id",
       },
     },
-    category_id: {
-      type: DataTypes.INTEGER,
-      reference: {
-        model: "category",
-        key: "id",
-      },
-    },
+  category_id: {
+    type: DataTypes.INTEGER,
+    allowNull: false,
+    reference: {
+      model: "category",
+      key: "id"
+    }
   },
+},
   {
     sequelize,
     timestamps: false,
