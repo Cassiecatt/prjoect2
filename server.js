@@ -12,7 +12,7 @@ const PORT = process.env.PORT || 3001 //heroku middleware
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true}));
-// app.use(express.static(path.join(_dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'public')));
 
 //turn on routes
 app.use(routes);
