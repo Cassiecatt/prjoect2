@@ -52,13 +52,13 @@ https://www.tooplate.com/view/2095-level
                             <div id="mainNav" class="collapse navbar-collapse tm-bg-white">
                                 <ul class="navbar-nav ml-auto">
                                   <li class="nav-item">
-                                    <a class="nav-link" href="/index.html">Sign up <span class="sr-only">(current)</span></a>
+                                    <a class="nav-link" href="#">Sign up</a>
                                   </li>
                                   <li class="nav-item">
-                                    <a class="nav-link" href="/index.html">Login</a>
+                                    <a class="nav-link" href="#">Login</a>
                                   </li>
                                   <li class="nav-item">
-                                    <a class="nav-link" href="/index2.html">Jobs</a>
+                                    <a class="nav-link" href="index2.html">Jobs</a>
                                   </li>
                                   <li class="nav-item">
                                     <a class="nav-link" href="#tm-section-6">Contact Us</a>
@@ -76,75 +76,43 @@ https://www.tooplate.com/view/2095-level
                             <div class="col-xs-12 ml-auto mr-auto ie-container-width-fix">
                                 <form action="index.html" method="get" class="tm-search-form tm-section-pad-2">
                                     <div class="form-row tm-search-form-row">
-                                        <div class="form-group tm-form-element tm-form-element-100">
-                                            <!-- <i class="fa fa-map-marker fa-2x tm-form-element-icon"></i> -->
+                                        <!-- <div class="form-group tm-form-element tm-form-element-100">
+                                             <i class="fa fa-map-marker fa-2x tm-form-element-icon"></i>
                                             <input name="city" type="text" class="form-control" id="inputCity" placeholder="User name">
-                                        </div>
-                                        <div class="form-group tm-form-element tm-form-element-50">
-                                            <!-- <i class="fa fa-calendar fa-2x tm-form-element-icon"></i> -->
-                                            <input name="check-in" type="text" class="form-control" placeholder="Password">
-                                        </div>
-                                        <!-- <div class="form-group tm-form-element tm-form-element-50">
-                                            <i class="fa fa-calendar fa-2x tm-form-element-icon"></i>
-                                            <input name="check-out" type="text" class="form-control" id="inputCheckOut" placeholder="Check Out">
                                         </div> -->
+                                        <!-- <div class="form-group tm-form-element tm-form-element-50">
+                                             <i class="fa fa-calendar fa-2x tm-form-element-icon"></i>
+                                            <input name="check-in" type="text" class="form-control" placeholder="Password">
+                                        </div> -->
+                                     
                                     </div>
                                     <div class="form-row tm-search-form-row">
-                                        <!-- <div class="form-group tm-form-element tm-form-element-2">                                            
-                                            <select name="adult" class="form-control tm-select" id="adult">
-                                                <option value="">Adult</option>
-                                                <option value="1">1</option>
-                                                <option value="2">2</option>
-                                                <option value="3">3</option>
-                                                <option value="4">4</option>
-                                                <option value="5">5</option>
-                                                <option value="6">6</option>
-                                                <option value="7">7</option>
-                                                <option value="8">8</option>
-                                                <option value="9">9</option>
-                                                <option value="10">10</option>
-                                            </select>
-                                            <i class="fa fa-2x fa-user tm-form-element-icon"></i>
-                                        </div>
-                                        <div class="form-group tm-form-element tm-form-element-2">                                            
-                                            <select name="children" class="form-control tm-select" id="children">
-                                                <option value="">Children</option>
-                                                <option value="0">0</option>
-                                                <option value="1">1</option>
-                                                <option value="2">2</option>
-                                                <option value="3">3</option>
-                                                <option value="4">4</option>
-                                                <option value="5">5</option>
-                                                <option value="6">6</option>
-                                                <option value="7">7</option>
-                                                <option value="8">8</option>
-                                                <option value="9">9</option>
-                                                <option value="10">10</option>
-                                            </select>
-                                            <i class="fa fa-user tm-form-element-icon tm-form-element-icon-small"></i>
-                                        </div>
+
                                         <div class="form-group tm-form-element tm-form-element-2">
-                                            <select name="room" class="form-control tm-select" id="room">
-                                                <option value="">Room</option>
-                                                <option value="1">1</option>
-                                                <option value="2">2</option>
-                                                <option value="3">3</option>
-                                                <option value="4">4</option>
-                                                <option value="5">5</option>
-                                                <option value="6">6</option>
-                                                <option value="7">7</option>
-                                                <option value="8">8</option>
-                                                <option value="9">9</option>
-                                                <option value="10">10</option>
-                                            </select>
-                                            <i class="fa fa-2x fa-bed tm-form-element-icon"></i>
-                                        </div> -->
-                                        <div class="form-group tm-form-element tm-form-element-2">
-                                            <button onclick='href="./index2.html"'  type="login" class="btn btn-primary tm-btn-search">Login</button>
+                                            <form class="form-group tm-form-element tm-form-element-50">
+                                                <div>
+                                                  <label for="email-login">email:</label>
+                                                  <input type="text" id="email-login" />
+                                                </div>
+                                                <div>
+                                                  <label for="password-login">password:</label>
+                                                  <input type="password" id="password-login" />
+                                                </div>
+                                                <div>
+                                                  <button href="./handlebars/login.handlebars" type="submit">login</button>
+                                                </div>
+                                              </form>
+                                              
+                                              <form class="form-group tm-form-element tm-form-element-100">
+                                                <!-- <div href="./handlebars/login.handlebars"></div> -->
+                                                <div></div>
+                                              </form>
+                                              
+                                              <script src="./assets/js/login.js"></script>
                                         </div>
                                       </div>
                                       <div class="form-row clearfix pl-2 pr-2 tm-fx-col-xs">
-                                          <p class="tm-margin-b-0">Sign in or Login above.</p>
+                                          <p class="tm-margin-b-0">Sign up or Login above.</p>
                                           <a href="./index2.html" class="ie-10-ml-auto ml-auto mt-1 tm-font-semibold tm-color-primary">Need Help?</a>
                                       </div>
                                 </form>
@@ -158,13 +126,10 @@ https://www.tooplate.com/view/2095-level
                 <div class="container">
                     <div class="row">
                         <div class="col text-center">
-                            <h2 class="tm-section-title">We are here to help you?</h2>
-                            <p class="tm-color-white tm-section-subtitle">Subscribe to get our newsletters</p>
-                            <a href="#" class="tm-color-white tm-btn-white-bordered">Subscribe Newletters</a>
-                        </div>                
+                            <h2 class="tm-section-title">Find what you've been looking for!!</h2>
                     </div>
                 </div>        
             </div>
-            
+            <script src="./handlebars/login.handlebars"></script>
 </body>
 </html>
