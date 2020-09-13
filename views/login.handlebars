@@ -1,20 +1,35 @@
-{{!-- Login form --}}
-<form class="login-form">
-  <div>
-    <label for="username-login">username:</label>
-    <input type="text" id="username-login" />
+{{!-- Sign up form --}}
+<div class="tm-section tm-bg-img" id="tm-section-1">
+  <div class="tm-bg-white ie-container-width-fix-2">
+    <div class="container ie-h-align-center-fix">
+      <div class="row">
+        <div class="col-xs-12 ml-auto mr-auto ie-container-width-fix">
+          <form class="tm-search-form tm-section-pad-2" id="signup-form">
+            <div>
+              <label for="username-signup">username:</label>
+              <input type="text" id="username-signup" />
+            </div>
+            <div>
+              <label for="password-signup">password:</label>
+              <input type="password" id="password-signup" />
+            </div>
+            <div>
+              <button type="submit">signup</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
   </div>
-  <div>
-    <label for="password-login">password:</label>
-    <input type="password" id="password-login" />
-  </div>
-  <div>
-    <button type="submit">login</button>
-  </div>
-</form>
+</div>
+
+<script src="/javascript/login.js"></script>
+
+
+
 
 {{!-- Sign up form --}}
-<form class="signup-form">
+{{!-- <form class="signup-form">
   <div>
     <label for="username-signup">username:</label>
     <input type="text" id="username-signup" />
@@ -26,6 +41,18 @@
   <div>
     <button type="submit">signup</button>
   </div>
-</form>
+</form>  --}}
 
-<script src="/javacsript/login.js"></script>
+{{!-- <form class="login-form">
+  <div>
+    <label for="username-login">username:</label>
+    <input type="text" id="username-login" />
+  </div>
+  <div>
+    <label for="password-login">password:</label>
+    <input type="password" id="password-login" />
+  </div>
+  <div>
+    <button type="submit">login</button>
+  </div>
+</form> --}}
