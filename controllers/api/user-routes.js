@@ -73,6 +73,7 @@ router.put("/:id", (req, res) => {
     });
 });
 
+//POST /api/users/login
 router.post("/login", (req, res) => {
   User.findOne({
     where: {
@@ -97,6 +98,17 @@ router.post("/login", (req, res) => {
       res.json({ user: dbUserData, message: "You are now logged in" });
     });
   });
+});
+
+//POST /api/users/logout
+router.post("/logout", (req, res) => {
+  if (req.session.loggedIn) {
+    req.session.destroy(() => {
+      res.status(204).end();
+    });
+  } else {
+    res.status(404).end();
+  }
 });
 
 // DELETE /api/users/1
