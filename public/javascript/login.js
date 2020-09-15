@@ -15,7 +15,7 @@
         headers: { "Content-Type": "application/json" },
       });
       if (response.ok) {
-        console.log("success");
+        document.location.replace("/dashboard"); //redirect to dashboard when logged in
       } else {
         alert(response.statusText);
       }
