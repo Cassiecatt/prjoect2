@@ -3,23 +3,23 @@
         <div class="container ie-h-align-center-fix">
             <div class="row">
                 <div class="col-xs-12 ml-auto mr-auto ie-container-width-fix">
-                    <form class="tm-search-form tm-section-pad-2" id="login-form">
+                    <form class="tm-search-form tm-section-pad-2" id="listing-form">
                         <div>
                             <h3>Create Job Listing</h3>
                             <label for="post-title">Job Title:</label>
-                            <input type="text" id="post-title" />
+                            <input type="text" id="post-title" name="post-title" />
                         </div>
                         <div>
                             <label for="post-description">Description:</label>
-                            <input type="text" id="post-description" />
+                            <input type="text" id="post-description" name="post-description" />
                         </div>
                         <div>
                             <label for="post-salary">Salary:</label>
-                            <input type="text" id="post-salary" />
+                            <input type="text" id="post-salary" name="post-salary" />
                         </div>
                         <div>
-                            <label for="post-category">Category:</label>
-                            <input type="text" id="post-category" />
+                            <label for="post-category">Category_id:</label>
+                            <input type="number" id="post-category" name="post-category" />
                         </div>
                         <div>
                             <button type="submit">Post</button>
@@ -57,3 +57,5 @@
         </div>
     </div>
 </div>
+
+<script src="/javascript/add-post.js"></script>
