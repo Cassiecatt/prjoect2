@@ -10,12 +10,18 @@ router.get("/", (req, res) => {
     Post.findAll({
       where: {
         user_id: req.session.user_id
-      }
+      },
+      attributes: [
+          "title",
+          "description",
+          "salary",
+      ],
     })
       .then(dbPostData => {
-        const posts = dbPostData
+        const posts = dbPostData.map(post => post.get({ plain: true }));
         console.log(posts)
         res.render("dashboard", {
+            laout: 'main',
           posts, loggedIn: true
         });
       })
