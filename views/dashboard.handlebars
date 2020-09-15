@@ -31,13 +31,14 @@
     </div>
 </div>
 
+{{#if posts.length}}
 <div class="tm-section tm-section-pad tm-bg-gray" id="tm-section-4">
     <div class="container">
         <div class="row">
             <div class="col-sm-12 col-md-12 col-lg-8 col-xl-8">
                 <h2>Your Listings</h2>
                 <br />
-                {{#each post}}
+                {{#each posts as |post|}}
                 <div class="tm-article-carousel">
                     <article class="tm-bg-white mr-2 tm-carousel-item">
                         <div class="tm-article-pad">
@@ -57,5 +58,7 @@
         </div>
     </div>
 </div>
+{{/if}}
 
 <script src="/javascript/add-post.js"></script>
+
