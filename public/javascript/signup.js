@@ -15,7 +15,7 @@ async function signupFormHandler(event) {
         headers: { "Content-Type": "application/json" },
       });
       if (response.ok) {
-        console.log("success");
+        document.location.replace("/dashboard"); //redirect to dashboard when signed up
       } else {
         alert(response.statusText);
       }
