@@ -39,7 +39,7 @@ https://www.tooplate.com/view/2095-level
                 <div class="row">
 
                     <nav class="navbar navbar-expand-lg narbar-light">
-                        <a class="navbar-brand mr-auto" href="#">
+                        <a class="navbar-brand mr-auto" href="/">
                             Code Search
                         </a>
                         <button type="button" id="nav-toggle" class="navbar-toggler collapsed" data-toggle="collapse"
@@ -51,20 +51,23 @@ https://www.tooplate.com/view/2095-level
                                 <li class="nav-item">
                                     <a class="nav-link" href="/">Home</a>
                                 </li>
+                                {{#if loggedIn}}
                                 <li class="nav-item">
                                     <a class="nav-link" href="/dashboard">Dashboard</a>
                                 </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" id="logout" href="/logout">Logout</a>
+                                </li>
+                                {{else}}
                                 <li class="nav-item">
                                     <a class="nav-link" href="/login">Login</a>
                                 </li> 
                                 <li class="nav-item">
                                     <a class="nav-link" href="/signup">Signup</a>
                                 </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" id="logout" href="/logout">Logout</a>
-                                </li>
                             </ul>
                         </div>
+                        {{/if}}
                     </nav>
                 </div>
             </div>

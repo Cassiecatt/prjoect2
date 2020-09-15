@@ -35,17 +35,23 @@
     <div class="container">
         <div class="row">
             <div class="col-sm-12 col-md-12 col-lg-8 col-xl-8">
+                <h2>Your Listings</h2>
+                <br />
+                {{#each post}}
                 <div class="tm-article-carousel">
                     <article class="tm-bg-white mr-2 tm-carousel-item">
                         <div class="tm-article-pad">
                             <header>
-                                <h3 class="text-uppercase tm-article-title-2">{{post_title}}</h3>
-                                <h4>{{post_salary}}</h4>
+                                <h3 class="text-uppercase tm-article-title-2">{{title}}</h3>
+                                <h4>{{salary}}</h4>
                             </header>
-                            <p>{{post_description}}</p>
+                            <p>{{description}}</p>
                             <a href="#" class="text-uppercase btn-primary tm-btn-primary">Submit Resume</a>
                         </div>
                     </article>
+                    {{else}}
+                    <p>No current listings</p>
+                    {{/each}}
                 </div>
             </div>
         </div>
