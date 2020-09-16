@@ -3,35 +3,38 @@
         <div class="container ie-h-align-center-fix">
             <div class="row">
                 <div class="col-xs-12 ml-auto mr-auto ie-container-width-fix">
-                    <form action="index.html" method="get" class="tm-search-form tm-section-pad-2">
-                        <div class="form-row tm-search-form-row">
-                            <div class="form-group tm-form-element tm-form-element-100">
-                                <i class="fa fa-map-marker fa-2x tm-form-element-icon"></i>
-                                <input name="city" type="text" class="form-control" id="inputCity"
-                                    placeholder="Search CSS, HTML, Javascript...">
-                            </div>
-                            <div class="form-group tm-form-element tm-form-element-2">
-                                <button type="submit" class="btn btn-primary tm-btn-search">Find jobs</button>
-                            </div>
+                    <div class="jumbotron jumbotron-fluid bg-white">
+                        <div class="container">
+                            <h1 class="text-monospace">Looking for a new job?</h1>
+                            <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of
+                                its parent.</p>
                         </div>
-                        <div class="form-row clearfix pl-2 pr-2 tm-fx-col-xs">
-                            <p class="tm-margin-b-0">Are you a company looking to add a job listing?</p>
-                            <a href="/login" class="ie-10-ml-auto ml-auto mt-1 tm-font-semibold tm-color-primary">Login here.</a>
-                        </div>
-                    </form>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
 
+<div class="tm-section-2">
+    <div class="container">
+        <div class="row">
+            <div class="col text-center">
+                <h2 class="tm-section-title">Current Openings</h2>
+                {{!-- <p class="tm-color-white tm-section-subtitle">We are here to help you! --}}
+                <p>
+                    {{!-- <a href="#" class="tm-color-white tm-btn-white-bordered">Subscribe Newletters</a> --}}
+            </div>
+        </div>
+    </div>
+</div>
+<div class="tm-section-2"></div>
 
-{{!-- <div class="tm-section tm-section-pad tm-bg-gray" id="tm-section-4">
+
+<div class="tm-section tm-section-pad tm-bg-gray" id="tm-section-4">
     <div class="container">
         <div class="row">
             <div class="col-sm-12 col-md-12 col-lg-8 col-xl-8">
-                <h2>Your Listings</h2>
-                <br />
                 {{#each posts}}
                 <div class="tm-article-carousel">
                     <article class="tm-bg-white mr-2 tm-carousel-item">
@@ -43,7 +46,8 @@
                             </header>
                             <h6>Description:</h6>
                             <p>{{description}}</p>
-                            <a href="#" class="text-uppercase btn-primary tm-btn-primary">Submit Resume</a>
+                            <a href="mailto:test@gmail.com" class="text-uppercase btn-primary tm-btn-primary">Submit
+                                Resume</a>
                         </div>
                     </article>
                     {{/each}}
@@ -51,4 +55,4 @@
             </div>
         </div>
     </div>
-</div> --}}
+</div>

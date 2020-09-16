@@ -1,7 +1,7 @@
 # Job Search
 
 ## Description
-A job search website built on an Express.js API and configured with Sequelize to interact with a MYSQL database. 
+A job search website built on an Express.js API and configured with Sequelize to interact with a MYSQL database that allows companies to list open positions and for users to search their desired job.
 
 ## Packages / How to Install
 * NPM - npm init -y
@@ -19,4 +19,6 @@ A job search website built on an Express.js API and configured with Sequelize to
 [Heroku link](insert URL in here)
 
 ## Screenshot of Project
-
+![1](https://cassiecatt.github.io/project-2/assets/screenshot-1.png)
+![2](https://cassiecatt.github.io/project-2/assets/screenshot-2.png)
+![3](https://cassiecatt.github.io/project-2/assets/screenshot-3.png)

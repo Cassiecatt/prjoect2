@@ -1,5 +1,6 @@
 const router = require("express").Router();
 const { User } = require("../../models");
+const withAuth = require("../../utils/auth");
 
 // GET /api/users
 router.get("/", (req, res) => {
@@ -32,7 +33,7 @@ router.get("/:id", (req, res) => {
 });
 
 // POST /api/users
-router.post("/", (req, res) => {
+router.post("/", withAuth, (req, res) => {
   User.create({
     username: req.body.username,
     password: req.body.password,
@@ -43,7 +44,8 @@ router.post("/", (req, res) => {
         req.session.username = dbUserData.username;
         req.session.loggedIn = true;
 
-        res.json(dbUserData);
+        // res.json(dbUserData);
+        res.redirect('/')
       });
     })
     .catch((err) => {
@@ -53,7 +55,7 @@ router.post("/", (req, res) => {
 });
 
 // PUT /api/users/1
-router.put("/:id", (req, res) => {
+router.put("/:id", withAuth, (req, res) => {
   User.update(req.body, {
     individualHooks: true,
     where: {
