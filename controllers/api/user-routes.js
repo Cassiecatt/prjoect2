@@ -33,7 +33,7 @@ router.get("/:id", (req, res) => {
 });
 
 // POST /api/users
-router.post("/", withAuth, (req, res) => {
+router.post("/", (req, res) => {
   User.create({
     username: req.body.username,
     password: req.body.password,
@@ -44,8 +44,8 @@ router.post("/", withAuth, (req, res) => {
         req.session.username = dbUserData.username;
         req.session.loggedIn = true;
 
-        // res.json(dbUserData);
-        res.redirect('/')
+        res.json(dbUserData);
+        // res.redirect('/')
       });
     })
     .catch((err) => {
