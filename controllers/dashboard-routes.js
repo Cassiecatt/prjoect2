@@ -30,4 +30,28 @@ router.get("/", withAuth, (req, res) => {
     });
 });
 
+router.get("/edit/:id", (req, res) => {
+  Post.findOne({
+    where: {
+      id: req.params.id
+    },
+    attributes: ["title", "description", "salary"],
+    include: [{ model: Category, attributes: ["category_name"] }],
+  })
+    .then((dbPostData) => {
+      const posts = dbPostData.map((post) => post.get({ plain: true }));
+      console.log(posts);
+      res.render("edit-post", {
+        laout: "main",
+        posts,
+        loggedIn: req.session.loggedIn,
+      });
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+});
+
+
 module.exports = router;

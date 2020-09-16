@@ -48,7 +48,10 @@
                             </header>
                             <h6>Description:</h6>
                             <p>{{description}}</p>
-                            <a href="#" class="text-uppercase btn-primary tm-btn-primary">Submit Resume</a>
+                            {{!-- <a href="#" class="text-uppercase btn-primary tm-btn-primary">Submit Resume</a> --}}
+                            <a href="/dashboard/edit/{{id}}" class="edit-link">Edit post</a>
+                            <br/>
+                            <button type="submit" class="btn-primary tm-btn-primary" id="delete-button">Delete Listing</button>
                         </div>
                     </article>
                     {{/each}}
@@ -60,4 +63,5 @@
 
 
 <script src="/javascript/add-post.js"></script>
+<script src="/javascript/edit-post.js"></script>
 
