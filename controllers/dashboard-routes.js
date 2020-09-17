@@ -12,10 +12,6 @@ router.get("/", withAuth, (req, res) => {
     where: {
       user_id: req.session.user_id,
     },
-    //     attributes: ["title", "description", "salary"],
-    //     include: [{ model: Category, attributes: ["category_name"]
-    //  }]
-    //   })
     attributes: ["title", "description", "salary"],
     include: [
       {
@@ -44,11 +40,22 @@ router.get("/", withAuth, (req, res) => {
 });
 
 router.get("/edit/:id", (req, res) => {
-  console.log(req.params.id);
+  // console.log(req.params.id);
   Post.findOne({
     where: {
       id: req.params.id,
     },
+    attributes: ["id, title", "description", "salary"],
+    include: [
+      {
+        model: Category,
+        attributes: ["id"],
+      },
+      // {
+      //   model: User,
+      //   attributes: ["id"],
+      // },
+    ],
   })
     .then((dbPostData) => {
       if (dbPostData) {
