@@ -45,7 +45,7 @@ router.get("/edit/:id", (req, res) => {
     where: {
       id: req.params.id,
     },
-    attributes: ["id, title", "description", "salary"],
+    attributes: ["id", "title", "description", "salary"],
     include: [
       {
         model: Category,
@@ -58,6 +58,7 @@ router.get("/edit/:id", (req, res) => {
     ],
   })
     .then((dbPostData) => {
+      console.log(dbPostData);
       if (dbPostData) {
         const post = dbPostData.get({ plain: true });
 
