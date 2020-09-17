@@ -1,7 +1,7 @@
 const router = require("express").Router();
 const sequelize = require("../config/connection");
 const { Post, User, Category } = require("../models");
-const withAuth = require("../utils/auth"); //middleware
+const withAuth = require('../utils/auth'); //middleware
 
 // router.get("/", (req, res) => {
 //   res.render("dashboard", { loggedIn: true });
