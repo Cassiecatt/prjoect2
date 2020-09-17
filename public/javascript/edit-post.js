@@ -1,3 +1,5 @@
+const postId = document.querySelector('input[name="post-id"]').value;
+
 async function editFormHandler(event) {
   event.preventDefault();
 
@@ -6,10 +8,7 @@ async function editFormHandler(event) {
   const salary = document.querySelector('input[name="post-salary"]').value;
   const category_id = document.querySelector('input[name="post-category"]').value;
 
-  const id = window.location.toString().split('/')[
-    window.location.toString().split('/').length - 1
-  ];
-  const response = await fetch(`/api/posts/${id}`, {
+  const response = await fetch(`/api/posts/${postId}`, {
     method: 'PUT',
     body: JSON.stringify({
       title,
@@ -32,10 +31,7 @@ async function editFormHandler(event) {
 async function deleteFormHandler(event) {
   event.preventDefault();
 
-  const id = window.location.toString().split('/')[
-    window.location.toString().split('/').length - 1
-  ];
-  const response = await fetch(`/api/posts/${id}`, {
+  const response = await fetch(`/api/posts/${postId}`, {
     method: 'DELETE'
   });
 

@@ -30,15 +30,19 @@ router.get("/", withAuth, (req, res) => {
     });
 });
 
-router.get("/edit/:id", withAuth, (req, res) => {
-  Post.findByPk(req.params.id)
+router.get("/edit/:id", (req, res) => {
+  Post.findOne({
+      where: {
+          id: req.params.id
+      }
+  })
     .then(dbPostData => {
       if (dbPostData) {
-        const posts = dbPostData.get({ plain: true });
+        const post = dbPostData.get({ plain: true });
         
         res.render("edit-post", {
           layout: "main",
-          posts
+          post
         });
       } else {
         res.status(404).end();
