@@ -19,6 +19,6 @@ A job search website built on an Express.js API and configured with Sequelize to
 [Heroku link](insert URL in here)
 
 ## Screenshot of Project
-![1](https://cassiecatt.github.io/project-2/assets/screenshot-1.png)
-![2](https://cassiecatt.github.io/project-2/assets/screenshot-2.png)
-![3](https://cassiecatt.github.io/project-2/assets/screenshot-3.png)
+![1](https://cassiecatt.github.io/project-2/public/assets/screenshot-1.png)
+![2](https://cassiecatt.github.io/project-2/public/assets/screenshot-2.png)
+![3](https://cassiecatt.github.io/project-2/public/assets/screenshot-3.png)
