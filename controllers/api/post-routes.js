@@ -70,7 +70,7 @@ router.post("/", withAuth, (req, res) => {
 });
 
 //PUT /api/posts/id
-router.put("/:id", withAuth, (req, res) => {
+router.put("/:id", (req, res) => {
   Post.update(req.body, {
     where: {
       id: req.params.id,
