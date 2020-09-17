@@ -30,28 +30,25 @@ router.get("/", withAuth, (req, res) => {
     });
 });
 
-router.get("/edit/:id", (req, res) => {
-  Post.findOne({
-    where: {
-      id: req.params.id
-    },
-    attributes: ["title", "description", "salary"],
-    include: [{ model: Category, attributes: ["category_name"] }],
-  })
-    .then((dbPostData) => {
-      const posts = dbPostData.map((post) => post.get({ plain: true }));
-      console.log(posts);
-      res.render("edit-post", {
-        laout: "main",
-        posts,
-        loggedIn: req.session.loggedIn,
-      });
+router.get("/edit/:id", withAuth, (req, res) => {
+  Post.findByPk(req.params.id)
+    .then(dbPostData => {
+      if (dbPostData) {
+        const posts = dbPostData.get({ plain: true });
+        
+        res.render("edit-post", {
+          layout: "main",
+          posts
+        });
+      } else {
+        res.status(404).end();
+      }
     })
-    .catch((err) => {
-      console.log(err);
+    .catch(err => {
       res.status(500).json(err);
     });
 });
+
 
 
 module.exports = router;
