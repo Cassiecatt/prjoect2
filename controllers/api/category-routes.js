@@ -36,7 +36,7 @@ router.get("/:id", (req, res) => {
 });
 
 //POST /api/categories
-router.post("/", withAuth, (req, res) => {
+router.post("/", (req, res) => {
   Category.create(req.body)
     .then((dbCategoryData) => res.json(dbCategoryData))
     .catch((err) => {
