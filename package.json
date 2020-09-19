@@ -1,5 +1,8 @@
 {
   "name": "project-2",
+  "engines": {
+    "node": "12.18.2"
+  },
   "version": "1.0.0",
   "description": "## Description A job search website built on an Express.js API and configured with Sequelize to interact with a MYSQL database.",
   "main": "server.js",
