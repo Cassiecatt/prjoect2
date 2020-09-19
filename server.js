@@ -22,6 +22,7 @@ const hbs = exphbs.create({});
 
 const app = express();
 const PORT = process.env.PORT || 3001 //heroku middleware
+app.set('port', PORT);
 
 //middleware
 app.use(session(sess));
