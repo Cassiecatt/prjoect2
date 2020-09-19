@@ -59,7 +59,7 @@ router.post("/", withAuth, (req, res) => {
     title: req.body.title,
     description: req.body.description,
     salary: req.body.salary,
-    user_id: req.session.user_id,
+    user_id: req.session.user_id, 
     category_id: req.body.category_id
   })
     .then((dbPostdata) => res.json(dbPostdata))

@@ -10,7 +10,7 @@ const withAuth = require('../utils/auth'); //middleware
 router.get("/", withAuth, (req, res) => {
   Post.findAll({
     where: {
-      user_id: req.session.id,
+      user_id: req.session.user_id, 
     },
     attributes: ["id", "title", "description", "salary"],
     include: [
