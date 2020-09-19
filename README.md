@@ -8,7 +8,7 @@ A job search website built on an Express.js API and configured with Sequelize to
 * npm i
 
 ## Heroku URL
-[Heroku link](insert URL in here)
+[Heroku link](https://secure-falls-51733.herokuapp.com/)
 
 ## Screenshot of Project
 ![homepage](https://cassiecatt.github.io/project-2/public/assets/homepage.png)
